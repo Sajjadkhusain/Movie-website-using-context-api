@@ -1,8 +1,20 @@
 import React from 'react'
-
-function App() {
+import Home from './component/Home'
+import SingleMovie from './component/SingleMovie'
+import Error from "./component/Error"
+import { Routes,Route } from 'react-router-dom'
+import "./App.css";
+const App = () => {
   return (
-    <div>Hello movie application</div>
+    <>
+  
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="movie/:id" element={<SingleMovie/>}/>
+      <Route path="*" element={<Error/>}/>
+    </Routes>
+  
+    </>
   )
 }
 
